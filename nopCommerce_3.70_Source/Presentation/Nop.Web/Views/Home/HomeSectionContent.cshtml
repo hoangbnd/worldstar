@@ -1,0 +1,167 @@
+﻿@{
+  //current category ID
+  int currentCategoryId = 0;
+  if (Url.RequestContext.RouteData.Values["controller"].ToString().Equals("catalog", StringComparison.InvariantCultureIgnoreCase) &&
+      Url.RequestContext.RouteData.Values["action"].ToString().Equals("category", StringComparison.InvariantCultureIgnoreCase))
+  {
+    currentCategoryId = Convert.ToInt32(Url.RequestContext.RouteData.Values["categoryId"].ToString());
+  }
+
+
+  //current manufacturer ID
+  int currentManufacturerId = 0;
+  if (Url.RequestContext.RouteData.Values["controller"].ToString().Equals("catalog", StringComparison.InvariantCultureIgnoreCase) &&
+      Url.RequestContext.RouteData.Values["action"].ToString().Equals("manufacturer", StringComparison.InvariantCultureIgnoreCase))
+  {
+    currentManufacturerId = Convert.ToInt32(Url.RequestContext.RouteData.Values["manufacturerId"].ToString());
+  }
+
+
+  //current product ID
+  int currentProductId = 0;
+  if (Url.RequestContext.RouteData.Values["controller"].ToString().Equals("product", StringComparison.InvariantCultureIgnoreCase) &&
+      Url.RequestContext.RouteData.Values["action"].ToString().Equals("productdetails", StringComparison.InvariantCultureIgnoreCase))
+  {
+    currentProductId = Convert.ToInt32(Url.RequestContext.RouteData.Values["productId"].ToString());
+  }
+}
+<section class="section section-main-content">
+  <div class="white-space space-xmini"></div>
+  <div class="col-md-2 column-2 nopadding">
+    @Html.Action("HomeCategoryNavigation", "Catalog", new { currentCategoryId = currentCategoryId, currentProductId = currentProductId })
+      <div class="ads-normal">
+          <div class="advertisement-zone">
+              <a href="#">
+                  <img src="~/Themes/Worldstart/Content/images/ads_1.jpg" class="img-responsive" />
+              </a>
+          </div>
+      </div>
+
+  </div>
+    <div class="col-md-3 column-3 nopadding sale-product">
+      @Html.Action("HomepageProducts", "Product")
+        <div class="product">
+            <div class="thumbnail img-product">
+                <a href="#">
+                    <img src="~/Themes/Worldstart/Content/images/product.jpg" alt="" />
+                    <div class="overlay-product">
+                        GIẢM ĐẾN <span class="text-bold">10%</span>
+                    </div>
+                </a>
+            </div>
+            <div class="content-product">
+                <h4 class="title-product">
+                    <a class="f12" href="#">Laptop Lenovo IdeaPad 100-14IBY 14.1inch (Đen)</a>
+                </h4>
+            </div>
+        </div>
+        <div class="product">
+            <div class="thumbnail img-product">
+                <a href="#">
+                    <img src="~/Themes/Worldstart/Content/images/product_1.jpg" alt="" />
+                    <div class="overlay-product">
+                        GIẢM ĐẾN <span class="text-bold">10%</span>
+                    </div>
+                </a>
+            </div>
+            <div class="content-product">
+                <h4 class="title-product">
+                    <a class="f12" href="#">Laptop Dell Inspiron 7348 13.3inch touch</a>
+                </h4>
+            </div>
+        </div>
+        <div class="product">
+            <div class="thumbnail img-product">
+                <a href="">
+                    <img src="~/Themes/Worldstart/Content/images/product_2.jpg" alt="" />
+                    <div class="overlay-product">
+                        GIẢM ĐẾN <span class="text-bold">50%</span>
+                    </div>
+                </a>
+            </div>
+            <div class="content-product">
+                <h4 class="title-product">
+                    <a class="f12" href="#">Màn hình máy tính LCD Dell 24inch Full HD - U2414H (Đen) </a>
+                </h4>
+            </div>
+        </div>
+    </div>
+  <div class="col-md-4 column-4 nopadding main-top-center">
+    <div class="ads-normal">
+      <div class="advertisement-zone">
+        <a href="#">
+          <img src="~/Themes/Worldstart/Content/images/ads.jpg" class="img-responsive" />
+        </a>
+      </div>
+    </div>
+    <div class="product product-horizontal">
+      <div class="thumbnail img-product">
+        <a href="">
+          <img src="~/Themes/Worldstart/Content/images/product_3.jpg" alt="" />
+        </a>
+      </div>
+      <div class="content-product text-center">
+        <p class="f16 text-bold price text-red">26.649.000 VND</p>
+        <p class="old-price">31.099.000 VND</p>
+        <h4 class="title-product">
+          <a class="f12" href="#">Laptop Lenovo IdeaPad 100-14IBY 14.1inch (Đen)</a>
+        </h4>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="product product-horizontal">
+      <div class="thumbnail img-product">
+        <a href="#">
+          <img src="~/Themes/Worldstart/Content/images/product_4.jpg" alt="" />
+          <div class="overlay-product bg-color-pink">
+            GIẢM ĐẾN <span class="text-bold">14%</span>
+          </div>
+        </a>
+      </div>
+      <div class="content-product text-center">
+        <p class="f16 text-bold price text-red">26.649.000 VND</p>
+        <p class="old-price">31.099.000 VND</p>
+        <h4 class="title-product">
+          <a class="f12" href="#">Laptop Lenovo IdeaPad 100-14IBY 14.1inch (Đen)</a>
+        </h4>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="col-md-3 column-3 nopadding supermarket">
+    <div class="block-list">
+      <h3 class="text-uppercase text-bold">Thảnh thơi mua sắm</h3>
+      <ul class="list-unstyled">
+        <li><a href="#"><i class="fa fa-caret-right"></i> Thanh toán khi nhận hàng</a></li>
+        <li><a href="#"><i class="fa fa-caret-right"></i>Giao hàng toàn quốc</a></li>
+        <li><a href="#"><i class="fa fa-caret-right"></i> 14 ngày trả hàng miễn phí</a></li>
+        <li><a href="#"><i class="fa fa-caret-right"></i>Nhà bán hàng uy tín</a></li>
+        <li><a href="#"><i class="fa fa-caret-right"></i>Dịch vụ CSKH chu đáo</a></li>
+      </ul>
+      <div class="white-space space-mini"></div>
+      <h3 class="text-uppercase text-bold text-orange">Bán hàng cùng worlstar </h3>
+      <p>
+        Cửa hàng trực tuyến của chính bạn, <br />
+        <a class="text-orange" href="#">tìm hiểu thêm. </a> <br />
+        <a class="text-orange">Sàn dịch vụ WorldStar</a>
+      </p>
+    </div>
+    <div class="block-list list-transportation">
+      <ul class="list-inline">
+        <li class="text-center"><a class="text-uppercase" href="#"><i class="icon icon-cart"></i> Các bước mua hàng</a></li>
+        <li class="text-center"><a class="text-uppercase" href="#"><i class="icon icon-car"></i> Phương thức vận chuyển</a></li>
+        <li class="text-center"><a class="text-uppercase" href="#"><i class="icon icon-money"></i> Các thức thanh toán</a></li>
+      </ul>
+      <div class="ads-normal">
+        <div class="advertisement-zone">
+          <a href="#">
+            <img src="~/Themes/Worldstart/Content/images/ads_4.jpg" class="img-responsive" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="clearfix"></div>
+</section>
+<div class="white-space space-mini"></div>

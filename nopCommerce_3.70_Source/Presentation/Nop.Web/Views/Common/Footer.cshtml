@@ -1,0 +1,250 @@
+﻿@model FooterModel
+@using Nop.Core
+@using Nop.Core.Domain.Tax
+@using Nop.Core.Infrastructure
+@using Nop.Web.Models.Common;
+
+<footer class="footer">
+  <div class="section section-top-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <ul class="list-inline list-careerbuilder">
+            <li class="active"><a class="text-uppercase" href="#">THÔNG BÁO</a></li>
+            <li><a class="text-uppercase" href="#">Việc làm</a></li>
+            <li><a class="text-uppercase" href="#">Tuyển dụng</a></li>
+          </ul>
+        </div>
+        <div class="col-md-8">
+          <ul class="list-inline navbar-right">
+            <li><a class="f12" href="#">Giới thiệu</a></li>
+            <li><a class="f12" href="#">Điều khoản sử dụng</a></li>
+            <li><a class="f12" href="#">Chính sách bảo mật</a></li>
+            <li><a class="f12" href="#">Đối tác</a></li>
+            <li><a class="f12" href="#">Liên hệ</a></li>
+            <li><a class="f12" href="#">Quảng cáo</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-footer">
+    <div class="container">
+      <div class="white-space space-xsmall"></div>
+      <div class="row">
+        <div class="col-md-3 footer-menu">
+          <h3 class="f12 text-uppercase text-bold">WORLDSTAR</h3>
+          <div class="white-space space-xsmall"></div>
+          <ul class="list-unstyled">
+            <li><a href="#"><i class="fa fa-caret-right"></i>Giới thiệu hệ thống siêu thị</a></li>
+            <li><a href="#"><i class="fa fa-caret-right"></i>Địa chỉ chuỗi siêu thị</a></li>
+            <li><a href="#"><i class="fa fa-caret-right"></i>Tuyến dụng</a></li>
+            <li><a href="#"><i class="fa fa-caret-right"></i>Thẻ thành viên</a></li>
+            <li><a href="#"><i class="fa fa-caret-right"></i>Dịch vụ sửa chữa</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 footer-menu">
+          <h3 class="f12 text-uppercase text-bold">CHÍNH SÁCH & QUY ĐỊNH</h3>
+          <div class="white-space space-xsmall"></div>
+          <ul class="list-unstyled">
+            <li><a href="#"><i class="fa fa-caret-right"></i>Chính sách bảo mật</a></li>
+            <li><a href="#"><i class="fa fa-caret-right"></i>Chính sách vận chuyển</a></li>
+            <li><a href="#"><i class="fa fa-caret-right"></i>Chính sách bảo hành</a></li>
+            <li><a href="#"><i class="fa fa-caret-right"></i>Chính sách đổi hàng</a></li>
+            <li><a href="#"><i class="fa fa-caret-right"></i>Quy định thanh toán</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 footer-menu">
+          <h3 class="f12 text-uppercase text-bold">HƯỚNG DẪN SỬ DỤNG</h3>
+          <div class="white-space space-xsmall"></div>
+          <ul class="list-unstyled">
+            <li><a href="#"><i class="fa fa-caret-right"></i>Những câu hỏi thường gặp</a></li>
+            <li><a href="#"><i class="fa fa-caret-right"></i>Hướng dẫn mua hàng</a></li>
+            <li><a href="#"><i class="fa fa-caret-right"></i>Hướng dẫn thanh toán</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 footer-menu">
+          <h3 class="text-uppercase text-bold">LIÊN HỆ</h3>
+          <div class="white-space space-xsmall"></div>
+          <ul class="list-unstyled">
+            <li>Tổng đài bán hàng (8:15 - 18:00)</li>
+            <li><a href="tel:1900.6619">1900.6619</a>, hoặc: <a href="tel:0904.881169">0904.881169</a></li>
+            <li><a href="mailto:online@worldstar.com.vn">online@worldstar.com.vn</a><br />Gọi khiếu nại (8:15 - 21:30)</li>
+            <li>1900.6699</li>
+            <li><a href="mailto:hamsockhachhang@worldstar.com.vn">hamsockhachhang@worldstar.com.vn</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="white-space space-small"></div>
+    </div>
+  </div>
+  <div class="section section-copyright">
+    <div class="container">
+      <p>&copy; 2007-2015 All Right Reserved by Worldstar.vn </p>
+      <p>Đã đăng ký với Cục Thương mại điện tử và Công nghệ thông tin – Bộ Công Thương</p>
+    </div>
+  </div>
+</footer>
+@*<div class="footer">
+    <div class="footer-upper">
+        <div class="footer-block information">
+            <div class="title">
+                <strong>@T("Footer.Information")</strong>
+            </div>
+            <ul class="list">
+                @if (Model.SitemapEnabled)
+                {
+                    <li><a href="@Url.RouteUrl("Sitemap")">@T("Sitemap")</a></li>
+                }
+                @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterColumn1).ToList())
+                {
+                    <li><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })">@topic.Name</a></li>
+                }
+                <li><a href="@Url.RouteUrl("ContactUs")">@T("ContactUs")</a></li>
+            </ul>
+        </div>
+        <div class="footer-block customer-service">
+            <div class="title">
+                <strong>@T("Footer.CustomerService")</strong>
+            </div>
+            <ul class="list">
+                <li><a href="@Url.RouteUrl("ProductSearch")">@T("Search")</a> </li>
+                @if (Model.NewsEnabled)
+                {
+                    <li><a href="@Url.RouteUrl("NewsArchive")">@T("News")</a></li>
+                }
+                @if (Model.BlogEnabled)
+                {
+                    <li><a href="@Url.RouteUrl("Blog")">@T("Blog")</a></li>
+                }
+                @if (Model.ForumEnabled)
+                {
+                    <li><a href="@Url.RouteUrl("Boards")">@T("Forum.Forums")</a></li>
+                }
+                @if (Model.RecentlyViewedProductsEnabled)
+                {
+                    <li><a href="@Url.RouteUrl("RecentlyViewedProducts")">@T("Products.RecentlyViewedProducts")</a></li>
+                }
+                @if (Model.CompareProductsEnabled)
+                {
+                    <li><a href="@Url.RouteUrl("CompareProducts")">@T("Products.Compare.List")</a></li>
+                }
+                @if (Model.NewProductsEnabled)
+                {
+                    <li><a href="@Url.RouteUrl("NewProducts")">@T("Products.NewProducts")</a></li>
+                }
+                @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterColumn2).ToList())
+                {
+                    <li><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })">@topic.Name</a></li>
+                }
+            </ul>
+        </div>
+        <div class="footer-block my-account">
+            <div class="title">
+                <strong>@T("Footer.MyAccount")</strong>
+            </div>
+            <ul class="list">
+                <li><a href="@Url.RouteUrl("CustomerInfo")">@T("Account.MyAccount")</a></li>
+                <li><a href="@Url.RouteUrl("CustomerOrders")">@T("Account.CustomerOrders")</a></li>
+                <li><a href="@Url.RouteUrl("CustomerAddresses")">@T("Account.CustomerAddresses")</a></li>
+                @if (Model.ShoppingCartEnabled)
+                {
+                    <li><a href="@Url.RouteUrl("ShoppingCart")">@T("ShoppingCart")</a></li>
+                }
+                @if (Model.WishlistEnabled)
+                {
+                    <li><a href="@Url.RouteUrl("Wishlist")">@T("Wishlist")</a></li>
+                }
+                @if (Model.AllowCustomersToApplyForVendorAccount)
+                {
+                    <li><a href="@Url.RouteUrl("ApplyVendorAccount")">@T("Vendors.ApplyAccount")</a></li>
+                }
+                @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterColumn3).ToList())
+                {
+                    <li><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })">@topic.Name</a></li>
+                }
+            </ul>
+        </div>
+        <div class="footer-block follow-us">
+            <div class="social">
+                <div class="title">
+                    <strong>@T("Footer.FollowUs")</strong>
+                </div>
+                <ul class="networks">
+                    @if (!string.IsNullOrEmpty(Model.FacebookLink))
+                    {
+                        <li class="facebook"><a href="@Model.FacebookLink" target="_blank">@T("Footer.FollowUs.Facebook")</a></li>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.TwitterLink))
+                    {
+                        <li class="twitter"><a href="@Model.TwitterLink" target="_blank">@T("Footer.FollowUs.Twitter")</a></li>
+                    }
+                    @if (Model.NewsEnabled)
+                    {
+                        <li class="rss"><a href="@Url.RouteUrl("NewsRSS", new {languageId = Model.WorkingLanguageId})">@T("Footer.FollowUs.RSS")</a></li>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.YoutubeLink))
+                    {
+                        <li class="youtube"><a href="@Model.YoutubeLink" target="_blank">@T("Footer.FollowUs.Youtube")</a></li>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.GooglePlusLink))
+                    {
+                        <li class="google-plus"><a href="@Model.GooglePlusLink" target="_blank">@T("Footer.FollowUs.GooglePlus")</a></li>
+                    }
+                </ul>
+            </div>
+            @Html.Action("NewsletterBox", "Newsletter")
+        </div>
+    </div>
+    <div class="footer-lower">
+        <div class="footer-info">
+            <span class="footer-disclaimer">@T("Content.CopyrightNotice", DateTime.Now.Year, Model.StoreName)</span>
+            @if (Model.DisplayTaxShippingInfoFooter)
+            {
+                var inclTax = EngineContext.Current.Resolve<IWorkContext>().TaxDisplayType == TaxDisplayType.IncludingTax;
+                <span class="footer-tax-shipping">
+                    @T(inclTax ? "Footer.TaxShipping.InclTax" : "Footer.TaxShipping.ExclTax", Url.RouteUrl("Topic", new {SeName = Html.GetTopicSeName("shippinginfo")}))
+                </span>
+            }
+        </div>
+        @if (!Model.HidePoweredByNopCommerce)
+        {
+            <div class="footer-powered-by">
+                Powered by <a href="http://www.nopcommerce.com/">nopCommerce</a>
+            </div>
+        }
+        @Html.Action("StoreThemeSelector", "Common")
+    </div>
+    @Html.Widget("footer")
+</div>*@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.footer-block .title').click(function () {
+            var e = window, a = 'inner';
+            if (!('innerWidth' in window)) {
+                a = 'client';
+                e = document.documentElement || document.body;
+            }
+            var result = { width: e[a + 'Width'], height: e[a + 'Height'] };
+            if (result.width < 769) {
+                $(this).siblings('.list').slideToggle('slow');
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.block .title').click(function () {
+            var e = window, a = 'inner';
+            if (!('innerWidth' in window)) {
+                a = 'client';
+                e = document.documentElement || document.body;
+            }
+            var result = { width: e[a + 'Width'], height: e[a + 'Height'] };
+            if (result.width < 1001) {
+                $(this).siblings('.listbox').slideToggle('slow');
+            }
+        });
+    });
+</script>

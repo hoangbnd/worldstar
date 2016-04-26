@@ -1,0 +1,11 @@
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Feed.Froogle\Views\FeedFroogle\Configure.cshtml
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Feed.Froogle\Description.txt
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Feed.Froogle\web.config
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Feed.Froogle\Content\styles.css
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Feed.Froogle\logo.jpg
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Feed.Froogle\Nop.Plugin.Feed.Froogle.dll.config
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Feed.Froogle\Nop.Plugin.Feed.Froogle.dll
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Feed.Froogle\Nop.Plugin.Feed.Froogle.pdb
+D:\Projects\worldstart\nopCommerce_3.70_Source\Plugins\Nop.Plugin.Feed.Froogle\obj\Debug\Nop.Plugin.Feed.Froogle.dll
+D:\Projects\worldstart\nopCommerce_3.70_Source\Plugins\Nop.Plugin.Feed.Froogle\obj\Debug\Nop.Plugin.Feed.Froogle.pdb
+D:\Projects\worldstart\nopCommerce_3.70_Source\Plugins\Nop.Plugin.Feed.Froogle\obj\Debug\Nop.Plugin.Feed.Froogle.csprojResolveAssemblyReference.cache

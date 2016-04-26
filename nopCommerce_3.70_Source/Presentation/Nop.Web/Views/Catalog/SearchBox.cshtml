@@ -1,0 +1,69 @@
+﻿@model SearchBoxModel
+@using Nop.Web.Models.Catalog;
+
+@using (Html.BeginRouteForm("ProductSearch", FormMethod.Get, new { id = "frm-search", @class = "navbar-left", @role = "search"}))
+{
+    <div class="input-group">
+      <input type="text" class="form-control search-box-text" aria-label="Text input with segmented button dropdown" id="small-searchterms" autocomplete="off" name="q" placeholder="@T("Search.SearchBox.Tooltip")">
+      
+      <div class="input-group-btn">
+          <button type="button" class="btn btn-default" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-angle-down"></i> <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          @*<ul class="dropdown-menu dropdown-menu-left">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>*@
+        @Html.Widget("searchbox_before_search_button")
+        
+        <button type="submit" class="btn btn-default" value="@T("Search.Button")">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  if (Model.SearchTermMinimumLength > 0)
+  {
+    <script type="text/javascript">
+      $("#frm-search").submit(function(event) {
+        if ($("#small-searchterms").val() == "") {
+          alert('@Html.Raw(HttpUtility.JavaScriptStringEncode(T("Search.EnterSearchTerms").Text))');
+          $("#small-searchterms").focus();
+          event.preventDefault();
+        }
+      });
+    </script>
+  }
+  if (Model.AutoCompleteEnabled)
+  {
+    <text>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $('#small-searchterms').autocomplete({
+            delay: 500,
+            minLength: @(Model.SearchTermMinimumLength.ToString()),
+            source: '@(Url.RouteUrl("ProductSearchAutoComplete"))',
+            appendTo: '.search-box',
+            select: function(event, ui) {
+              $("#small-searchterms").val(ui.item.label);
+              setLocation(ui.item.producturl);
+              return false;
+            }
+          })
+              .data("ui-autocomplete")._renderItem = function(ul, item) {
+                var t = item.label;
+                //html encode
+                t = htmlEncode(t);
+                return $("<li></li>")
+                    .data("item.autocomplete", item)
+                    .append("<a>@(Model.ShowProductImagesInSearchAutoComplete ? Html.Raw("<img src='\" + item.productpictureurl + \"'>") : null)<span>" + t + "</span></a>")
+                    .appendTo(ul);
+              };
+        });
+      </script>
+    </text>
+  }
+  @Html.Widget("searchbox")
+}

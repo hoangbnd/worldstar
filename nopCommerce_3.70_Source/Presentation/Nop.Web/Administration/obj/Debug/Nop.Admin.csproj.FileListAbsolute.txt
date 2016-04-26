@@ -1,0 +1,6 @@
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\bin\Nop.Admin.dll.config
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\bin\Nop.Admin.dll
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\bin\Nop.Admin.pdb
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.csprojResolveAssemblyReference.cache
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.dll
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.pdb

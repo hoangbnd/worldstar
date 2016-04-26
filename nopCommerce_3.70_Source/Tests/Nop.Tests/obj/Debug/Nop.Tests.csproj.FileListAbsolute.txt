@@ -1,0 +1,9 @@
+D:\Projects\worldstart\nopCommerce_3.70_Source\Tests\Nop.Tests\bin\Debug\Nop.Tests.dll
+D:\Projects\worldstart\nopCommerce_3.70_Source\Tests\Nop.Tests\bin\Debug\Nop.Tests.pdb
+D:\Projects\worldstart\nopCommerce_3.70_Source\Tests\Nop.Tests\bin\Debug\nunit.framework.dll
+D:\Projects\worldstart\nopCommerce_3.70_Source\Tests\Nop.Tests\bin\Debug\Rhino.Mocks.dll
+D:\Projects\worldstart\nopCommerce_3.70_Source\Tests\Nop.Tests\bin\Debug\nunit.framework.xml
+D:\Projects\worldstart\nopCommerce_3.70_Source\Tests\Nop.Tests\bin\Debug\Rhino.Mocks.xml
+D:\Projects\worldstart\nopCommerce_3.70_Source\Tests\Nop.Tests\obj\Debug\Nop.Tests.csprojResolveAssemblyReference.cache
+D:\Projects\worldstart\nopCommerce_3.70_Source\Tests\Nop.Tests\obj\Debug\Nop.Tests.dll
+D:\Projects\worldstart\nopCommerce_3.70_Source\Tests\Nop.Tests\obj\Debug\Nop.Tests.pdb

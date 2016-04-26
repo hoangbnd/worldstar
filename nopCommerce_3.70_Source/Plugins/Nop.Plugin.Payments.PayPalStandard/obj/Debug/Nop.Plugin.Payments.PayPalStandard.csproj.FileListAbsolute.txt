@@ -1,0 +1,10 @@
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\Views\PaymentPayPalStandard\Configure.cshtml
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\Views\PaymentPayPalStandard\PaymentInfo.cshtml
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\web.config
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\Description.txt
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\logo.jpg
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\Nop.Plugin.Payments.PayPalStandard.dll.config
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\Nop.Plugin.Payments.PayPalStandard.dll
+D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\Nop.Plugin.Payments.PayPalStandard.pdb
+D:\Projects\worldstart\nopCommerce_3.70_Source\Plugins\Nop.Plugin.Payments.PayPalStandard\obj\Debug\Nop.Plugin.Payments.PayPalStandard.dll
+D:\Projects\worldstart\nopCommerce_3.70_Source\Plugins\Nop.Plugin.Payments.PayPalStandard\obj\Debug\Nop.Plugin.Payments.PayPalStandard.pdb

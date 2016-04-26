@@ -1,0 +1,66 @@
+﻿@using Nop.Core.Domain.Common;
+@using Nop.Core.Infrastructure;
+@{
+  var displayMiniProfiler = EngineContext.Current.Resolve<Nop.Core.Domain.StoreInformationSettings>().DisplayMiniProfilerInPublicStore;
+  Html.AppendScriptParts("~/Scripts/worldstart/script.js");
+  Html.AppendScriptParts("~/Scripts/worldstart/owl.carousel.js");
+  Html.AppendScriptParts("~/Scripts/worldstart/jquery.mmenu.min.all.js");
+  Html.AppendScriptParts("~/Scripts/worldstart/jquery.easing.min.js");
+  Html.AppendScriptParts("~/Scripts/worldstart/bootstrap.js");
+  Html.AppendScriptParts("~/Scripts/public.ajaxcart.js");
+  Html.AppendScriptParts("~/Scripts/public.common.js");
+  Html.AppendScriptParts("~/Scripts/jquery-migrate-1.2.1.min.js");
+  Html.AppendScriptParts("~/Scripts/jquery-ui-1.10.3.custom.min.js");
+  Html.AppendScriptParts("~/Scripts/jquery.validate.unobtrusive.min.js");
+  Html.AppendScriptParts("~/Scripts/jquery.validate.min.js");
+  Html.AppendScriptParts("~/Scripts/jquery-1.10.2.min.js");
+
+  //X-UA-Compatible tag
+  var commonSettings = EngineContext.Current.Resolve<CommonSettings>();
+  if (commonSettings.RenderXuaCompatible)
+  {
+    Html.AppendHeadCustomParts(string.Format("<meta http-equiv=\"X-UA-Compatible\" content=\"{0}\"/>", commonSettings.XuaCompatibleValue));
+  }
+}
+<!DOCTYPE html>
+<html @Html.Partial("LanguageAttributes")>
+<head>
+  <title>@Html.NopTitle(true)</title>
+  <!--[if lt IE 9]><script src="http://getbootstrap.com/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+  <meta name="description" content="@(Html.NopMetaDescription())" />
+  <meta name="keywords" content="@(Html.NopMetaKeywords())" />
+  <meta name="generator" content="nopCommerce" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  @Html.NopHeadCustom()
+  @*This is used so that themes can inject content into the header*@
+  @Html.Partial("Head")
+  @Html.Widget("head_html_tag")
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+  @Html.NopCssFiles(this.Url, ResourceLocation.Head)
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  @Html.NopScripts(this.Url, ResourceLocation.Head)
+  @Html.NopCanonicalUrls()
+  @Html.Action("RssHeaderLink", "News")
+  @Html.Action("RssHeaderLink", "Blog")
+  @*Favicon - upload favicon.ico file to the root directory*@
+  @Html.Action("Favicon", "Common")
+  @if (displayMiniProfiler)
+  {
+    @StackExchange.Profiling.MiniProfiler.RenderIncludes()
+  }
+  <!--Powered by nopCommerce - http://www.nopCommerce.com-->
+</head>
+<body>
+    @RenderBody()
+    @Html.NopCssFiles(this.Url, ResourceLocation.Foot)
+    @Html.NopScripts(this.Url, ResourceLocation.Foot)
+</body>
+</html>
