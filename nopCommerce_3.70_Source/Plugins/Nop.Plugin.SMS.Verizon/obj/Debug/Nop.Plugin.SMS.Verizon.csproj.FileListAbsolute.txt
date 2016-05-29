@@ -7,3 +7,4 @@ D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\SMS.
 D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\SMS.Verizon\Nop.Plugin.SMS.Verizon.pdb
 D:\Projects\worldstart\nopCommerce_3.70_Source\Plugins\Nop.Plugin.SMS.Verizon\obj\Debug\Nop.Plugin.SMS.Verizon.dll
 D:\Projects\worldstart\nopCommerce_3.70_Source\Plugins\Nop.Plugin.SMS.Verizon\obj\Debug\Nop.Plugin.SMS.Verizon.pdb
+D:\Projects\worldstart\nopCommerce_3.70_Source\Plugins\Nop.Plugin.SMS.Verizon\obj\Debug\Nop.Plugin.SMS.Verizon.csprojResolveAssemblyReference.cache

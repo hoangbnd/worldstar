@@ -1,0 +1,407 @@
+﻿@{
+  Layout = "~/Views/Shared/_RootCategory.cshtml";
+}
+@{
+  //current category ID
+  int currentCategoryId = 0;
+  if (Url.RequestContext.RouteData.Values["controller"].ToString().Equals("catalog", StringComparison.InvariantCultureIgnoreCase) &&
+      Url.RequestContext.RouteData.Values["action"].ToString().Equals("category", StringComparison.InvariantCultureIgnoreCase))
+  {
+    currentCategoryId = Convert.ToInt32(Url.RequestContext.RouteData.Values["categoryId"].ToString());
+  }
+
+
+  //current manufacturer ID
+  int currentManufacturerId = 0;
+  if (Url.RequestContext.RouteData.Values["controller"].ToString().Equals("catalog", StringComparison.InvariantCultureIgnoreCase) &&
+      Url.RequestContext.RouteData.Values["action"].ToString().Equals("manufacturer", StringComparison.InvariantCultureIgnoreCase))
+  {
+    currentManufacturerId = Convert.ToInt32(Url.RequestContext.RouteData.Values["manufacturerId"].ToString());
+  }
+
+
+  //current product ID
+  int currentProductId = 0;
+  if (Url.RequestContext.RouteData.Values["controller"].ToString().Equals("product", StringComparison.InvariantCultureIgnoreCase) &&
+      Url.RequestContext.RouteData.Values["action"].ToString().Equals("productdetails", StringComparison.InvariantCultureIgnoreCase))
+  {
+    currentProductId = Convert.ToInt32(Url.RequestContext.RouteData.Values["productId"].ToString());
+  }
+}
+<section class="container">
+  <section class="section section-main-content">
+    <div class="white-space space-xmini"></div>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-3 section-category">
+            @if (IsSectionDefined("left"))
+              {
+                  @RenderSection("left")
+              }
+              else
+              {
+              @Html.Widget("left_side_column_before")
+              @Html.Action("CategoryNavigation", "Catalog", new { currentCategoryId = currentCategoryId, currentProductId = currentProductId })
+              @*@Html.Widget("left_side_column_after_category_navigation")
+              @Html.Action("ManufacturerNavigation", "Catalog", new { currentManufacturerId = currentManufacturerId })
+              @Html.Action("VendorNavigation", "Catalog")
+              @Html.Action("RecentlyViewedProductsBlock", "Product", new { productThumbPictureSize = 64 })
+              @Html.Action("PopularProductTags", "Catalog")
+              @Html.Action("PollBlock", "Poll", new { systemKeyword = "LeftColumnPoll" })
+              @Html.Widget("left_side_column_after")*@
+          }
+          </div>
+          <div class="col-md-9 section-prodlist-wrap">
+            @if (IsSectionDefined("Breadcrumb"))
+            {
+                @section Breadcrumb {
+                  @RenderSection("Breadcrumb")
+                }
+            }
+            <div class="ads-normal">
+              <div class="advertisement-zone">
+                  <a href="#">
+                    <img class="img-responsive" src="@Url.Content("~/Worldstart/Content/images/ads_8.jpg")" alt="" />
+                  </a>
+              </div>
+            </div>
+            <div class="white-space space-xmini"></div>
+            <ul class="list-depth">
+              <li><a href="">Intel</a></li>
+              <li><a href="">Thế hệ thứ sáu của Intel</a></li>
+              <li><a href="">AMD </a></li>
+              <li><a href="">CPU Cooler </a></li>
+              <li><a href="">Sử dụng CPU</a></li>
+            </ul>
+            <div class="white-space space-xsmall"></div>
+            <form name="frmProductList" id="frmProductList" class="form-horizontal ">
+              <div class="spec_item">
+                <div class="spec_hearder">
+                  <h4 class="f12 pull-left">SO SÁNH HIỆU SUẤT </h4>
+                  <div class="dropdown pull-right">
+                    <a class="dropdown-toggle" id="viewoption" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      Xem tùy chọn <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="viewoption">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                    </ul>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="spec_content">
+                  <div class="productItem">
+                    <div class="form-group">
+                      <label class="col-sm-2"><span>Nhãn hiệu loại </span></label>
+                      <div class="col-sm-9">
+                        <div class="row">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox">Intel (Core thế hệ i7-6)
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox">Intel (Core thế hệ i5-6)
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox">Intel (Core thế hệ i3-6)
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox">Intel (Core thế hệ i7-6)
+                            </label>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="col-sm-1 text-center">
+                        <div class="row">
+                          <a href="#"><i class="fa fa-plus-square-o" aria-hidden="true"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="productItem">
+                    <div class="form-group">
+                      <label class="col-sm-2"><span>Nhãn hiệu loại </span></label>
+                      <div class="col-sm-9">
+                        <div class="row">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox">Intel (Core thế hệ i7-6)
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox">Intel (Core thế hệ i5-6)
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox">Intel (Core thế hệ i3-6)
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox">Intel (Core thế hệ i7-6)
+                            </label>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="col-sm-1 text-center">
+                        <div class="row">
+                          <a href="#"><i class="fa fa-plus-square-o" aria-hidden="true"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="productItem">
+                    <div class="form-group">
+                      <label class="col-sm-2"><span>Nhãn hiệu loại </span></label>
+                      <div class="col-sm-9">
+                        <div class="row">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox">Intel (Core thế hệ i7-6)
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox">Intel (Core thế hệ i5-6)
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox">Intel (Core thế hệ i3-6)
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox">Intel (Core thế hệ i7-6)
+                            </label>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="col-sm-1 text-center">
+                        <div class="row">
+                          <a href="#"><i class="fa fa-plus-square-o" aria-hidden="true"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="productItem">
+                    <div class="form-group">
+                      <label class="col-sm-2"><span>Nhãn hiệu loại </span></label>
+                      <div class="col-sm-9">
+                        <div class="row">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox">Intel (Core thế hệ i7-6)
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox">Intel (Core thế hệ i5-6)
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox">Intel (Core thế hệ i3-6)
+                            </label>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox">Intel (Core thế hệ i7-6)
+                            </label>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="col-sm-1 text-center">
+                        <div class="row">
+                          <a href="#"><i class="fa fa-plus-square-o" aria-hidden="true"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="spec_footer ">
+
+                  <label class="col-sm-2"><span>Đăng nhập thương hiệu</span></label>
+                  <div class="col-sm-8">
+                    <ul class="list-inline brand_list">
+                      <li class="brand_item">
+                        <a href="#" target="_blank" class="brand_link">AMD <i class="fa fa-plus-square-o" aria-hidden="true"></i></a>
+                      </li>
+                      <li class="brand_item">
+                        <a href="#" target="_blank" class="brand_link"><i class="fa fa-caret-right" aria-hidden="true"></i> Intel</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-sm-2">
+                    <a class="btn f12" href="#">Xem thêm</a>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="white-space space-xsmall"></div>
+        <div class="row">
+          <div class="col-md-12">
+            @Html.Widget("main_column_before")
+            @RenderBody()
+            @Html.Widget("main_column_after")
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class=" block-gray bg-color-gray">
+          <div class="ads-normal">
+            <div class="advertisement-zone">
+              <a href="#">
+                <img src="img/ads_7.jpg" class="img-responsive" />
+              </a>
+            </div>
+          </div>
+          <div class="block-list list-normal">
+            <h3><a href="#">Diễn đàn Hội đồng quản trị</a></h3>
+            <ul>
+              <li>
+                <a href="#">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i> A10-7850K VS i5-6600K
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i> Skylake ngăn Intel từ phi Kay ép xung.
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i> AMD FX 8370 với Wraith COOLER
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="block-list list-normal">
+            <h3><a href="#">Tin tức</a></h3>
+            <ul>
+              <li>
+                <a href="#">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i> Mô hình K chỉ ép xung chấp nhận được của Intel
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i>  Chi phí nâng cấp cho mỗi phần hướng dẫn để chơi game PC
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i> Cuộc đua mới Cooler AMD, bạn giới hạn K CPU ép xung của Intel. Gigle phần
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="block-list list-normal">
+            <h3><a href="#">Xem lại</a></h3>
+            <ul>
+              <li>
+                <a href="#">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i> Samsung Electronics đã nhận được các AMD, một tầng dùng?
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i> Open World Action RPG 'Sư', Bonnie trở lại Sky và GTX970 PC
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i> Won tám CPU quad-core, AMD Athlon X4 860K là có thể sử dụng làm gì?
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i> Nghệ thuật 'game thủ Galaxy L 240GB SSD' Seduction nhập cảnh cấp SSD
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="block-list list-normal">
+            <h3><a href="#">Sayonggi</a></h3>
+            <ul>
+              <li>
+                <a href="#">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i> Sky Lake mainboard của tốt nhất, ejeurak B150M Pro4 DND Com
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i> Nổi bật không ăn da bo mạch Sky Lake, ejeurak B150M Pro4 DND Com ngoài Li
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i> bo mạch chủ GIGABYTE Workstation X150M-PLUS WS Durable bản sayonggi
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i> [Cám dỗ mạnh mẽ để ép Xeon] Xeon 1230 v5 vs i7 6700K thử nghiệm ép
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="block-list list-normal">
+            <h3><a href="#">Hướng dẫn mua hàng</a></h3>
+            <ul>
+              <li>
+                <a href="#">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i>Quý khách sẽ được nhân viên kinh doanh hướng dẫn lựa chọn sản phẩm và lập phiếu yêu cầu xuất hàng.
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i> Quý khách cầm phiếu yêu cầu đến quầy kế toán để làm thủ tục thanh toán.
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i> Nhân viên kế toán sẽ làm thủ tục thanh toán và gửi lại Quý khách phiếu xuất hàng.
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i> Nếu Quý khách có nhu cầu nhận hàng tại
+                  nhà, nhân viên kinh doanh sẽ hẹn thời gian
+                  cụ thể để giao hàng cho Quý khách theo
+                  Chính sách giao nhận của Công ty.
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="ads-normal">
+            <div class="advertisement-zone">
+              <a href="#">
+                <img src="img/ads_9.jpg" class="img-responsive" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </section>
+  <div class="white-space space-mini"></div>
+</section>

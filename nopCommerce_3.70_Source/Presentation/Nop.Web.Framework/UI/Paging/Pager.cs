@@ -153,7 +153,7 @@ namespace Nop.Web.Framework.UI.Paging
                     {
                         if (model.PageIndex == i)
                         {
-                            links.AppendFormat("<li class=\"current-page\"><span>{0}</span></li>", (i + 1));
+                            links.AppendFormat("<li class=\"current-page active\"><span>{0}</span></li>", (i + 1));
                         }
                         else
                         {
@@ -182,7 +182,7 @@ namespace Nop.Web.Framework.UI.Paging
             var result = links.ToString();
             if (!String.IsNullOrEmpty(result))
             {
-                result = "<ul>" + result + "</ul>";
+                result = "<ul class=\"pagination\">" + result + "</ul>";
             }
             return result;
 		}

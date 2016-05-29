@@ -12,7 +12,7 @@
   <script type="text/javascript">
     AjaxCart.init(false, '.header-links .cart-qty', '.header-links .wishlist-qty', '#flyout-cart');
   </script>
-  <div class="master-wrapper-content">
+  <section id="content" role="main" tabindex="-1" class="container-fluid full-width nopadding">
     @Html.Widget("content_before")
 
     @if (IsSectionDefined("Breadcrumb"))
@@ -23,7 +23,7 @@
       @RenderBody()
     </div>
     @Html.Widget("content_after")
-  </div>
+  </section>
   @Html.Action("Footer", "Common")
 </div>
 

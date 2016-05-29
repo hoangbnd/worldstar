@@ -2005,6 +2005,7 @@
     <Content Include="Themes\Worldstart\Content\images\ads_5.jpg" />
     <Content Include="Themes\Worldstart\Content\images\ads_6.jpg" />
     <Content Include="Themes\Worldstart\Content\images\arrow-right.png" />
+    <Content Include="Themes\Worldstart\Content\images\bg-summary.jpg" />
     <Content Include="Themes\Worldstart\Content\images\captcha.png" />
     <Content Include="Themes\Worldstart\Content\images\gold-time.png" />
     <Content Include="Themes\Worldstart\Content\images\icon-cart.png" />
@@ -2097,6 +2098,12 @@
     <Content Include="Themes\Worldstart\Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Themes\Worldstart\Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Themes\Worldstart\Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\Shared\_ProductHome.cshtml" />
+    <Content Include="Views\Shared\_Category.cshtml" />
+    <Content Include="Views\Shared\_Root.HeadCategory.cshtml" />
+    <Content Include="Views\Shared\_RootCategory.cshtml" />
+    <Content Include="Views\Shared\_ProductBoxCategory.cshtml" />
+    <Content Include="Views\Shared\_Product.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Roxy_Fileman\tmp\" />

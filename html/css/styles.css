@@ -2082,3 +2082,23 @@ ul.navbar-service > li > a {
 .right-news {
   line-height: 1.5
 }
+.box-article-relate {
+  border-radius: 0px;
+}
+.box-article-relate .panel-heading{
+  background: #f3f3f3;
+  font-size: 12px;
+  box-shadow: none;
+  padding:10px
+}
+.box-article-relate .panel-heading .dropdown a{
+  padding: 3px 10px;
+  border-radius: 0px;
+  font-size: 12px;
+}
+.box-article-relate .panel-heading .checkbox {
+  margin: 0px;
+}
+.box-article-relate .panel-heading .checkbox input[type="radio"], input[type="checkbox"] {
+  margin: 1px 0px;
+}

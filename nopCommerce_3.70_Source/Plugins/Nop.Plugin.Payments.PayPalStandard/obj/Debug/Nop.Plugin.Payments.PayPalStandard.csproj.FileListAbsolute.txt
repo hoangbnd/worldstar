@@ -8,3 +8,4 @@ D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Paym
 D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\Nop.Plugin.Payments.PayPalStandard.pdb
 D:\Projects\worldstart\nopCommerce_3.70_Source\Plugins\Nop.Plugin.Payments.PayPalStandard\obj\Debug\Nop.Plugin.Payments.PayPalStandard.dll
 D:\Projects\worldstart\nopCommerce_3.70_Source\Plugins\Nop.Plugin.Payments.PayPalStandard\obj\Debug\Nop.Plugin.Payments.PayPalStandard.pdb
+D:\Projects\worldstart\nopCommerce_3.70_Source\Plugins\Nop.Plugin.Payments.PayPalStandard\obj\Debug\Nop.Plugin.Payments.PayPalStandard.csprojResolveAssemblyReference.cache

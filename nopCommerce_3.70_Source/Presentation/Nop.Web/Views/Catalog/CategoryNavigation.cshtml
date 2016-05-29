@@ -2,71 +2,76 @@
 @using Nop.Web.Models.Catalog;
 
 @functions{
-    public bool BreadCrumbContainsCurrentCategoryId(CategorySimpleModel category)
+  public bool BreadCrumbContainsCurrentCategoryId(CategorySimpleModel category)
+  {
+    if (Model.CurrentCategoryId == 0)
+      return false;
+
+    if (category.Id == Model.CurrentCategoryId)
+      return true;
+
+    foreach (var subCategory in category.SubCategories)
     {
-        if (Model.CurrentCategoryId == 0)
-            return false;
-
-        if (category.Id == Model.CurrentCategoryId)
-            return true;
-
-        foreach (var subCategory in category.SubCategories)
-        {
-            if (BreadCrumbContainsCurrentCategoryId(subCategory))
-            {
-                return true;
-            }
-        }
-
-        return false;
+      if (BreadCrumbContainsCurrentCategoryId(subCategory))
+      {
+        return true;
+      }
     }
+
+    return false;
+  }
 }
 @helper RenderCategoryLine(CategorySimpleModel category)
 {
-    bool active = category.Id == Model.CurrentCategoryId || category.SubCategories.Count(BreadCrumbContainsCurrentCategoryId) > 0;
-    bool last = category.Id == Model.CurrentCategoryId;
-    string liClass = active ? "active" : "inactive";
-    if (last)
-    {
-        liClass += " last";
-    }
-    <li class="@liClass">
-        <a href="@Url.RouteUrl("Category", new { SeName = category.SeName })">@category.Name
-            @if (category.NumberOfProducts.HasValue)
+  bool active = category.Id == Model.CurrentCategoryId || category.SubCategories.Count(BreadCrumbContainsCurrentCategoryId) > 0;
+  bool last = category.Id == Model.CurrentCategoryId;
+  string liClass = active ? "active" : "inactive";
+  if (last)
+  {
+    liClass += " last";
+  }
+  <li class="@liClass">
+    <a href="@Url.RouteUrl("Category", new { SeName = category.SeName })">
+      @category.Name
+      @if (category.NumberOfProducts.HasValue)
+      {
+        <text> </text>@T("Categories.TotalProducts", category.NumberOfProducts.Value)
+      }
+      <i class="fa fa-angle-right pull-right"></i>
+    </a>
+    @{
+      if (category.Id == Model.CurrentCategoryId ||
+          category.SubCategories.Count(BreadCrumbContainsCurrentCategoryId) > 0)
+      {
+        if (category.SubCategories.Count > 0)
+        {
+          <ul class="sublist">
+            @foreach (var subCategory in category.SubCategories)
             {
-                <text> </text>@T("Categories.TotalProducts", category.NumberOfProducts.Value)
+              @RenderCategoryLine(subCategory)
             }
-        </a>
-        @{
-            if (category.Id == Model.CurrentCategoryId ||
-                category.SubCategories.Count(BreadCrumbContainsCurrentCategoryId) > 0)
-            {
-                if (category.SubCategories.Count > 0)
-                {
-            <ul class="sublist">
-                @foreach (var subCategory in category.SubCategories)
-                {
-                    @RenderCategoryLine(subCategory)
-                }
-            </ul>
-                }
-            }
+          </ul>
         }
-    </li>
+      }
+    }
+  </li>
 }
 @if (Model.Categories.Count > 0)
 {
-    <div class="block block-category-navigation">
-        <div class="title">
-            <strong>@T("Categories")</strong>
-        </div>
-        <div class="listbox">
-            <ul class="list">
-                @foreach (var category in Model.Categories)
-                {
-                    @RenderCategoryLine(category)
-                }
-            </ul>
-        </div>
-    </div>
+
+  <div class="smart-accordion-default">
+    <h3 class="text text-uppercase text-bold"><i class="fa fa-th"></i><strong>@T("DANH MỤC SẢN PHẨM")</strong> </h3>
+    @*<h3 class="text-bold bg-color-white ">
+        <a class="text-orange" href="">Các linh kiện máy tính</a>
+      </h3>*@
+    <ul class="nav tabs-left" id="demo-pill-nav">
+      @foreach (var category in Model.Categories)
+      {
+        @RenderCategoryLine(category)
+      }
+    </ul>
+  </div>
 }
+<script type="text/javascript">
+   
+</script>

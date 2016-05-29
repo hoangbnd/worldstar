@@ -7,3 +7,4 @@ D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Ship
 D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Shipping.CanadaPost\Nop.Plugin.Shipping.CanadaPost.pdb
 D:\Projects\worldstart\nopCommerce_3.70_Source\Plugins\Nop.Plugin.Shipping.CanadaPost\obj\Debug\Nop.Plugin.Shipping.CanadaPost.dll
 D:\Projects\worldstart\nopCommerce_3.70_Source\Plugins\Nop.Plugin.Shipping.CanadaPost\obj\Debug\Nop.Plugin.Shipping.CanadaPost.pdb
+D:\Projects\worldstart\nopCommerce_3.70_Source\Plugins\Nop.Plugin.Shipping.CanadaPost\obj\Debug\Nop.Plugin.Shipping.CanadaPost.csprojResolveAssemblyReference.cache

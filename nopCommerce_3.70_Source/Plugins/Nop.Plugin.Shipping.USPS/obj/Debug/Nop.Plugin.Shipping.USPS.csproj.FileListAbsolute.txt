@@ -7,3 +7,4 @@ D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Ship
 D:\Projects\worldstart\nopCommerce_3.70_Source\Presentation\Nop.Web\Plugins\Shipping.USPS\Nop.Plugin.Shipping.USPS.pdb
 D:\Projects\worldstart\nopCommerce_3.70_Source\Plugins\Nop.Plugin.Shipping.USPS\obj\Debug\Nop.Plugin.Shipping.USPS.dll
 D:\Projects\worldstart\nopCommerce_3.70_Source\Plugins\Nop.Plugin.Shipping.USPS\obj\Debug\Nop.Plugin.Shipping.USPS.pdb
+D:\Projects\worldstart\nopCommerce_3.70_Source\Plugins\Nop.Plugin.Shipping.USPS\obj\Debug\Nop.Plugin.Shipping.USPS.csprojResolveAssemblyReference.cache
