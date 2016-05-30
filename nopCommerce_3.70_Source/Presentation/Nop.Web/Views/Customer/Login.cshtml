@@ -62,8 +62,16 @@
                             }
                         </div>
                         <div class="text-center footer-form">
-                            <a href="/register" class="btn btn-default">Đăng ký</a>
-                            <a class="btn btn-default">Tìm ID</a>
+                            @if (Model.CheckoutAsGuest)
+                            {
+                              <input type="button" class="btn btn-default checkout-as-guest-button" onclick="location.href='@Url.RouteUrl("Checkout")'" value="@T("Account.Login.CheckoutAsGuest")" />
+                              <input type="button" class="btn btn-default button-1 register-button" onclick="location.href='@registerUrl'" value="@T("Account.Register")" />
+
+                            }
+                            else
+                            {
+                              <input type="button" class="btn btn-default button-1 register-button" onclick="location.href='@registerUrl'" value="@T("Account.Register")" />
+                            }
                             <a class="btn btn-default">Tìm Mật Khẩu</a>
                         </div>
                     </div>

@@ -2,20 +2,23 @@
 @using Nop.Web.Models.Checkout
 @using Nop.Web.Models.ShoppingCart;
 @{
-    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+  Layout = "~/Views/Shared/_ColumnsOne.cshtml";
 
-    //title
-    Html.AddTitleParts(T("PageTitle.ShoppingCart").Text);
+  //title
+  Html.AddTitleParts(T("PageTitle.ShoppingCart").Text);
 }
 @if (!Model.OnePageCheckoutEnabled)
 {
-    @Html.Action("CheckoutProgress", "Checkout", new {step = CheckoutProgressStep.Cart})
+  @Html.Action("CheckoutProgress", "Checkout", new { step = CheckoutProgressStep.Cart })
 }
-<div class="page shopping-cart-page">
-    <div class="page-title">
-        <h1>@T("ShoppingCart")</h1>
-    </div>
-    <div class="page-body">
-        @Html.Partial("OrderSummary", Model)
-    </div>
-</div>
+<section class="container">
+  <div class="white-space space-xsmall"></div>
+  <section class="section section-main-content">
+    <ol class="breadcrumb">
+      <li><a href="/" class="text-uppercase">Home</a></li>
+      <li><a href="#">Đơn hàng đã đặt </a></li>
+    </ol>
+    @Html.Partial("OrderSummary", Model)
+    <div class="white-space space-small"></div>
+  </section>
+</section>

@@ -23,9 +23,9 @@
     </div>
     @Html.Widget("op_checkout_confirm_bottom")
     <div class="section order-summary">
-        @Html.Action("OrderSummary", "ShoppingCart", new { prepareAndDisplayOrderReviewData = true })
+        @Html.Action("OrderCheckout", "ShoppingCart", new { prepareAndDisplayOrderReviewData = true })
     </div>    
-    @if (String.IsNullOrEmpty(Model.MinOrderTotalWarning) && Model.TermsOfServiceOnOrderConfirmPage)
+    @*@if (String.IsNullOrEmpty(Model.MinOrderTotalWarning) && Model.TermsOfServiceOnOrderConfirmPage)
     {
         <div id="terms-of-service-warning-box" title="@T("Checkout.TermsOfService")" style="display:none;">
             <p>@T("Checkout.TermsOfService.PleaseAccept")</p>
@@ -34,5 +34,5 @@
             <input id="termsofservice" type="checkbox" name="termsofservice" />
             <span>@T("Checkout.TermsOfService.IAccept")<a class="read" onclick="javascript:OpenWindow('@Url.RouteUrl("TopicPopup", new { SystemName = "conditionsofuse" })', 450, 500, true)">@T("Checkout.TermsOfService.Read")</a></span>
         </div>
-    }
+    }*@
 </div>

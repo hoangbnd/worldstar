@@ -9,6 +9,7 @@
 
 @if (Model.Items.Count > 0)
 {
+  @*@Html.Partial("_OrderReviewData", Model.OrderReviewData)*@
   if (Model.Warnings.Count > 0)
   {
     <div class="message-error">
@@ -35,10 +36,7 @@
       </div>
     }
     <div class="row">
-      <div class="col-xs-12 col-md-9">
-        <div class="page-header header-page-customer">
-          <h1>Giỏ hàng</h1>
-        </div>
+      <div class="col-xs-12 col-md-12">
         <div class="block">
           <div class="table-wrapper">
             <table class="cart">
@@ -213,53 +211,6 @@
           <div class="clearfix"></div>
         </div>
         <div class="white-space space-xmini"></div>
-        <p>Bạn muốn mua thêm sản phẩm? <a class="text-orange" href="#">Thêm sản phẩm mới</a></p>
-        <div class="white-space space-mini"></div>
-        <div class="block-gray bg-color-gray">
-          @if (Model.TermsOfServiceOnShoppingCartPage)
-          {
-            <div id="terms-of-service-warning-box" title="@T("Checkout.TermsOfService")" style="display:none;">
-              <p>@T("Checkout.TermsOfService.PleaseAccept")</p>
-            </div>
-            <div class="terms-of-service pull-left">
-              <input id="termsofservice" type="checkbox" name="termsofservice" />
-              <span>@T("Checkout.TermsOfService.IAccept")<a class="read" onclick="javascript:OpenWindow('@Url.RouteUrl("TopicPopup", new { SystemName = "conditionsofuse" })', 450, 500, true)">@T("Checkout.TermsOfService.Read")</a></span>
-            </div>
-          }
-          @if (String.IsNullOrEmpty(Model.MinOrderSubtotalWarning))
-          {
-            <button type="submit" id="checkout" name="checkout" value="checkout" class="btn btn-customer pull-right checkout-button">
-              @T("Checkout.Button")
-            </button>
-          }
-          <div class="clearfix"></div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-3">
-          <div class="panel panel-default panel-customer panel-striped">
-              <div class="panel-heading">Thông tin đơn hàng</div>
-              <div class="panel-body">
-
-                  <table class="table table-order-info">
-                      <tbody>
-                          @foreach (var item in Model.Items)
-                          {
-                              <tr>
-                                  <td>
-                                      <span class="product-quantity">@item.Quantity</span> x
-                                      <a href="@Url.RouteUrl("Product", new { SeName = item.ProductSeName })" class="product-name">@item.ProductName</a>
-                                  </td>
-                                  <td>
-                                      @item.UnitPrice
-                                  </td>
-                              </tr>
-                          }
-                      </tbody>
-                  </table>
-                  @Html.Action("OrderTotals", "ShoppingCart", new { isEditable = Model.IsEditable })
-
-              </div>
-          </div>
       </div>
     </div>
   }

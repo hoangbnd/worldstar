@@ -2104,6 +2104,8 @@
     <Content Include="Views\Shared\_RootCategory.cshtml" />
     <Content Include="Views\Shared\_ProductBoxCategory.cshtml" />
     <Content Include="Views\Shared\_Product.cshtml" />
+    <Content Include="Views\Shared\_ColumnsTwoCustomer.cshtml" />
+    <Content Include="Views\ShoppingCart\OrderCheckout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Roxy_Fileman\tmp\" />

@@ -1,7 +1,7 @@
 ﻿@model CustomerAddressListModel
 @using Nop.Web.Models.Customer;
 @{
-    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+  Layout = "~/Views/Shared/_ColumnsTwoCustomer.cshtml";
 
     //title
     Html.AddTitleParts(T("PageTitle.Account").Text);
@@ -12,7 +12,7 @@
 }
 <div class="page account-page address-list-page">
     <div class="page-title">
-        <h1>@T("Account.MyAccount") - @T("Account.CustomerAddresses")</h1>
+        <h1 class="page-header">@T("Account.MyAccount") - @T("Account.CustomerAddresses")</h1>
     </div>
     <div class="page-body">
         @if (Model.Addresses.Count > 0)

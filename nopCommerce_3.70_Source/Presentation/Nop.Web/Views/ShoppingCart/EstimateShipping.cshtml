@@ -2,8 +2,24 @@
 @using Nop.Web.Models.ShoppingCart;
 @if (Model.Enabled)
 {
-    <div class="shipping">
-        <script type="text/javascript">
+  <div class="block-col-6">
+    <div class="block-order">
+      <h4><a class="text-bold f22">@T("Địa điểm")</a></h4>
+      <div class="white-space space-mini"></div>
+      <p>Số 55, phố Láng hạ, Hà Nội <br /> Thành Công, Ba Đình, Hà Nội</p>
+      <p>099 800 092</p>
+      <div class="white-space space-mini"></div>
+      <div class="white-space space-mini"></div>
+      <div class="white-space space-mini"></div>
+      <div class="block-option">
+        <button class="btn btn-danger">Giao tới địa chỉ này</button>
+        <button class="btn btn-default">Sửa địa chỉ</button>
+        <button class="btn btn-default">Xóa</button>
+      </div>
+    </div>
+  </div>
+  @*<div class="shipping">
+    <script type="text/javascript">
             $(function() {
                 $("#@Html.FieldIdFor(model => model.CountryId)").change(function() {
                     var selectedItem = $(this).val();
@@ -29,59 +45,59 @@
                     });
                 });
             });
-        </script>
+    </script>
 
-        <div class="estimate-shipping">
-            <div class="title">
-                <strong>@T("ShoppingCart.EstimateShipping")</strong>
-            </div>
-            <div class="hint">@T("ShoppingCart.EstimateShipping.Tooltip")</div>
-            <div class="shipping-options">
-                <div class="inputs">
-                    @Html.LabelFor(model => model.CountryId, new { }, ":")
-                    @Html.DropDownListFor(model => model.CountryId, Model.AvailableCountries, new { @class = "country-input" })
-                    <span class="required">*</span>
-                </div>
-                <div class="inputs">
-                    @Html.LabelFor(model => model.StateProvinceId, new { }, ":")
-                    @Html.DropDownListFor(model => model.StateProvinceId, Model.AvailableStates, new { @class = "state-input" })
-                    <span id="estimate-shipping-loading-progress" style="display: none;" class="please-wait">@T("Common.Wait...")</span>
-                </div>
-                <div class="inputs">
-                    @Html.LabelFor(model => model.ZipPostalCode, new { }, ":")
-                    @Html.TextBoxFor(model => model.ZipPostalCode, new { @class = "zip-input" })
-                </div>
-                <div class="buttons">
-                    <input type="submit" name="estimateshipping" value="@T("ShoppingCart.EstimateShipping.Button")" class="button-2 estimate-shipping-button" />
-                </div>
-            </div>
-            @if (Model.ShippingOptions.Count > 0)
+    <div class="estimate-shipping">
+      <div class="title">
+        <strong>@T("ShoppingCart.EstimateShipping")</strong>
+      </div>
+      <div class="hint">@T("ShoppingCart.EstimateShipping.Tooltip")</div>
+      <div class="shipping-options">
+        <div class="inputs">
+          @Html.LabelFor(model => model.CountryId, new { }, ":")
+          @Html.DropDownListFor(model => model.CountryId, Model.AvailableCountries, new { @class = "country-input" })
+          <span class="required">*</span>
+        </div>
+        <div class="inputs">
+          @Html.LabelFor(model => model.StateProvinceId, new { }, ":")
+          @Html.DropDownListFor(model => model.StateProvinceId, Model.AvailableStates, new { @class = "state-input" })
+          <span id="estimate-shipping-loading-progress" style="display: none;" class="please-wait">@T("Common.Wait...")</span>
+        </div>
+        <div class="inputs">
+          @Html.LabelFor(model => model.ZipPostalCode, new { }, ":")
+          @Html.TextBoxFor(model => model.ZipPostalCode, new { @class = "zip-input" })
+        </div>
+        <div class="buttons">
+          <input type="submit" name="estimateshipping" value="@T("ShoppingCart.EstimateShipping.Button")" class="button-2 estimate-shipping-button" />
+        </div>
+      </div>
+      @if (Model.ShippingOptions.Count > 0)
             {
-                <ul class="shipping-results">
-                    @foreach (var shippingOption in Model.ShippingOptions)
+          <ul class="shipping-results">
+            @foreach (var shippingOption in Model.ShippingOptions)
                     {
-                        <li class="shipping-option-item">
-                            <strong class="option-name">
-                                @T("ShoppingCart.EstimateShipping.ShippingOptionWithRate", shippingOption.Name, shippingOption.Price)
-                            </strong>
-                            <span class="option-description">
-                                @Html.Raw(shippingOption.Description)
-                            </span>
-                        </li>
+                  <li class="shipping-option-item">
+                    <strong class="option-name">
+                      @T("ShoppingCart.EstimateShipping.ShippingOptionWithRate", shippingOption.Name, shippingOption.Price)
+                    </strong>
+                    <span class="option-description">
+                      @Html.Raw(shippingOption.Description)
+                    </span>
+                  </li>
                     }
-                </ul>
+          </ul>
             }
             else if (Model.Warnings.Count > 0)
             {
-                <div class="message-error">
-                    <ul>
-                        @foreach (var error in Model.Warnings)
+          <div class="message-error">
+            <ul>
+              @foreach (var error in Model.Warnings)
                         {
-                            <li>@error</li>
+                      <li>@error</li>
                         }
-                    </ul>
-                </div>
+            </ul>
+          </div>
             }
-        </div>
     </div>
+  </div>*@
 }
